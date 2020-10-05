@@ -1,9 +1,7 @@
 import { getInitialData } from "../utils/api"
-import { setAuthedUSer } from "./authedUser";
 import { receiveQuestions } from "./questions";
 import { receiveUsers } from "./users"
 
-const AUTHED_USER = 'sarahedo';
 
 /**
  * Fetch all users on app loading
@@ -18,7 +16,6 @@ export function handleInitialData () {
         .then(({users, questions}) => {
             dispatch(receiveUsers(users))
             dispatch(receiveQuestions(questions))
-            dispatch(setAuthedUSer(AUTHED_USER))
         })
     }
 }
