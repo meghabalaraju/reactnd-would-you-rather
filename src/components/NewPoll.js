@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import logo from '../utils/icons/newPollBg.svg'
 
 class NewPoll extends Component {
+
+    // we need access to authedUser, textarea's value should stored in component's state
+    // onclick should dispatch action with authed user and formated question
     render() {
         return (
             <div className='container' style={{

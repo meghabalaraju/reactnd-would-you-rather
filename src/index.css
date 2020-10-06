@@ -155,3 +155,71 @@ p {
   font-weight: 500;
   letter-spacing: 1px;
 }
+
+/* Leader board*/
+
+.leaderboard-container {
+  width: 100%;
+  max-width: 590px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.leader-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  border: 1.5px solid #da8d35;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 25px;
+}
+
+.leader-avatar {
+  flex: 1 0 auto;
+  text-align: center;
+  border-right: 1.5px solid #da8d35;
+  border-right-style: dotted;
+  margin-right: 30px;
+}
+
+.leader-qa {
+  flex: 1 0 auto;
+  text-align: justify;
+}
+
+.leader-score {
+  flex: 1 0 auto;
+  text-align: center;
+  border: 1.5px solid #da8d35;
+  border-radius: 50% 20%;
+
+}
+
+.avatar {
+  height: 60px;
+  border-radius: 50px;
+  margin: 10px;
+}
+
+.leader-name {
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.score-head {
+  border-bottom: 1.5px solid #da8d35;
+  margin-top: 0;
+  padding: 10px 0px;
+}
+.score {
+  width: 20%;
+  background-color: #F8A253;
+  border-radius: 40% 20%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 5px;
+  color: white;
+}
