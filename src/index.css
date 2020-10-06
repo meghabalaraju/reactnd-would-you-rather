@@ -5,13 +5,20 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Fira Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fff9ee
+  background-color: #faf6ed
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
 
 .wrapper {
   position: absolute;
@@ -26,7 +33,6 @@ code {
   max-width: 590px;
   margin: 0 auto;
   padding: 20px;
-  /* border: 1px solid #F8A253; */
   border-radius: 10px;
   cursor: pointer;
   box-shadow: -2px 2px 0px 1.5px #f0e3ce, 2px -2px 0px 0px #f8eddb, -3px 3px 6px 3px #f8eddb, 2px -2px 4px 1px #f8eddb;
@@ -59,13 +65,53 @@ code {
   border-radius: 3px;
   outline: none;
   border: none;
-
 }
 
 .btn-select {
   margin-bottom: 30px;
   background-color: #F8A253;
 }
+
+.btn-create{
+  padding: 10px 50px;
+  background-color: #fe8c00;
+  color: #dbd4d4;
+  
+}
+
+/*  New Poll */
+
+.newPoll {
+  background-color: #FFFCF9;  
+  background-image:  radial-gradient( circle at top right,#53f8d4,#f3f2f1 );
+}
+
+.poll-container{
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 50% 20%;
+  background: -webkit-linear-gradient(135deg, #4cd7e0 10% 55%,  #5f66f8 100%);
+}
+
+
+
+.poll-form {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.text-area {
+  width: 60%;
+  border-radius: 4px;
+  border: 1px solid #dad7d7;
+  padding: 10px;
+  font-size: 15px;
+  height: 50px;
+}
+
 
 /* Fonts */
 .log-header-font {
@@ -78,7 +124,34 @@ code {
 
 }
 
+.head-poll {
+  font-style: oblique;
+  color: rgba(20,30,48,1);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+/* Uitility classes*/
 p {
   font-weight: 300;
 }
 
+.center {
+  text-align: center;
+}
+
+.u-margin{
+  margin: 0;
+}
+
+.u-margin-small{
+  margin-bottom: 10px;
+}
+
+.u-font-small {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
