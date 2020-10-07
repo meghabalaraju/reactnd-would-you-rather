@@ -10,7 +10,8 @@ class NewPoll extends Component {
             <div className='container' style={{
                                                 backgroundImage: `url(${logo})`, 
                                                 backgroundRepeat: 'no-repeat', 
-                                                backgroundColor: '#ffffff'}}>
+                                                backgroundColor: '#ffffff',
+                                                backgroundPosition: '0% 0%' }}>
                 <h2 className="center head-poll">Create a new poll</h2>
                 <div className='poll-container'>
                         <h5 className="u-font-small"> would you rather </h5>
