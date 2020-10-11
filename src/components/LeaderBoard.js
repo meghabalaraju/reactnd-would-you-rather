@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Leaders from './Leaders'
+import Nav from './Nav'
 
 class LeaderBoard extends Component {
     render () {
@@ -8,6 +9,7 @@ class LeaderBoard extends Component {
         const { leaders } = this.props
         return (
             <div className="leaderboard-container">
+                <Nav />
                 {
                     leaders.map((key, i) => (
                         <Leaders key={key.id} userData={key}/>

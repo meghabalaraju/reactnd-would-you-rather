@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import logo from '../utils/icons/newPollBg.svg'
+import Nav from './Nav'
 
 class NewPoll extends Component {
 
-    // we need access to authedUser, textarea's value should stored in component's state
-    // onclick should dispatch action with authed user and formated question
     render() {
         return (
-            <div className='container' style={{
+            <div className="leaderboard-container">
+                <Nav />
+                <div className='container' style={{
                                                 backgroundImage: `url(${logo})`, 
                                                 backgroundRepeat: 'no-repeat', 
                                                 backgroundColor: '#ffffff',
@@ -20,13 +21,13 @@ class NewPoll extends Component {
                                 className='text-area'
                                 placeholder='option one'
                                 maxLength={100} />
-                            <h5 className="u-font-small">OR</h5>
+                            <h5 className="u-font-head-small">OR</h5>
                             <textarea
                                 className='text-area'
                                 placeholder='Option two'
                                 wrap="true"
                                 maxLength={100} />
-                            <p style={{opacity: 0}}>text left</p>
+                            <p style={{opacity: 0, margin: '5px'}}>text left</p>
                             <button 
                                 className='btn btn-create center'
                                 >
@@ -35,6 +36,7 @@ class NewPoll extends Component {
                         </form>
                     </div>
                     
+                </div>
             </div>
         )
     }

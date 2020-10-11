@@ -5,10 +5,11 @@ class Leaders extends Component {
     render() {
         const { userData } = this.props
         const { name, avatarURL, answers, questions } = userData 
+        
         const answeredQuestions = Object.keys(answers).length
         const createdQuestions = questions.length
         const score = answeredQuestions + createdQuestions
-        console.log(userData, answeredQuestions, createdQuestions)
+
         return(
             <div className="leader-container">
                 <div className="leader-avatar">
