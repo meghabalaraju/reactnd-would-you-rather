@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { handleInitialData } from '../actions/shared';
-
 import NewPoll from '../components/NewPoll'
 import LeaderBoard from './LeaderBoard';
 import Home from './Home';
-
-
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
-import PrivateRoute from '../routes/PrivateRoute';
 import Login from './Login';
+import PrivateRoute from '../routes/PrivateRoute';
 
 class App extends Component {
 
