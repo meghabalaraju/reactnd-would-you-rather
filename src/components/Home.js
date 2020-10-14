@@ -3,9 +3,13 @@ import { connect } from 'react-redux'
 import Nav from './Nav'
 import { handleQuestions } from '../actions/questions'
 import Question from './Question'
+import TabNav from './tabnav/TabNav'
+import Tab from './tabnav/Tab'
 
 
 class Home extends Component {
+    tabs = ['Unanswered Questions', 'Answered Questions']
+
     componentDidMount() {
         const { dispatch } = this.props
         dispatch(handleQuestions())
@@ -20,14 +24,10 @@ class Home extends Component {
                 { loading === true 
                     ? <p>Loading...</p>
                     : <div className="container-questions"> 
-                        <div>
-                            <Question />
-                            {unansweredQids}
-                        </div>
-                        <div>
-                            <Question />
-                            {answeredQids}
-                        </div>
+                        <TabNav tabs={this.tabs}>
+                            <Tab lable={'Unanswered Questions'}>tab 1</Tab>
+                            <Tab lable={'Answered Questions'}>tab 2</Tab>
+                        </TabNav>
                       </div>
                 }
                 
