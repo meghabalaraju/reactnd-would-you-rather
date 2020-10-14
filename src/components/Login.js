@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import { handleSetAuthedUser } from '../actions/authedUser'
-import { handleQuestions } from '../actions/questions'
 
 class Login extends Component {
 
@@ -37,8 +35,6 @@ class Login extends Component {
         const { dispatch } = this.props
 
         dispatch(handleSetAuthedUser(userID))
-        dispatch(handleQuestions())
-
 
         if (this.props.location.state) {
             const { from } = this.props.location.state
