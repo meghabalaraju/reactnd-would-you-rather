@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Nav from './Nav'
 import { handleQuestions } from '../actions/questions'
-import Question from './Question'
+import Nav from './Nav'
 import TabNav from './tabnav/TabNav'
 import Tab from './tabnav/Tab'
-
+import Question from './Question'
 
 class Home extends Component {
     tabs = ['Unanswered Questions', 'Answered Questions']
@@ -25,8 +24,16 @@ class Home extends Component {
                     ? <p>Loading...</p>
                     : <div className="container-questions"> 
                         <TabNav tabs={this.tabs}>
-                            <Tab lable={'Unanswered Questions'}>tab 1</Tab>
-                            <Tab lable={'Answered Questions'}>tab 2</Tab>
+                            <Tab lable={'Unanswered Questions'}>
+                                {unansweredQids.map((id) => (
+                                    <Question key={id} id={id}/>
+                                ))}
+                            </Tab>
+                            <Tab lable={'Answered Questions'}>
+                                {answeredQids.map((id) => (
+                                    <Question key={id} id={id}/>
+                                ))}
+                            </Tab>
                         </TabNav>
                       </div>
                 }

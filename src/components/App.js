@@ -7,6 +7,7 @@ import LeaderBoard from './LeaderBoard';
 import Home from './Home';
 import Login from './Login';
 import PrivateRoute from '../routes/PrivateRoute';
+import QuestionDetail from './QuestionDetail';
 
 class App extends Component {
 
@@ -23,6 +24,7 @@ class App extends Component {
               <PrivateRoute exact path="/home" component={Home} />
               <PrivateRoute exact path="/new" component={NewPoll} />
               <PrivateRoute exact path="/leaderboard" component={LeaderBoard} />
+              <PrivateRoute exact path="/question/:id" component={QuestionDetail} />
 
               {/* todo: Create 404 page and redirect to login */}
               <Route path="*" component={() => "404 page not found"} /> 
