@@ -18,11 +18,11 @@ class TabNav extends Component {
 
         return (
             <div>
-                <ul>
+                <ul className="nav-tab">
                     {tabs.map((tab) => {
                         return (
-                            <li key={tab} className={tab === active ? 'active' : ''}> 
-                                <a href="#" onClick={(e) => this.setSelected(e, tab)} >
+                            <li key={tab} className={`nav-item-tab ${tab === active ? 'nav-active' : ''}`} onClick={(e) => this.setSelected(e, tab) }> 
+                                <a href="#" className="nav-link-tab">
                                     {tab}
                                 </a>
                             </li>
@@ -32,11 +32,9 @@ class TabNav extends Component {
                 {this.props.children.map((child) => {
                     if(child.props.lable === active)
                     return (
-                        <div key={child.props.lable} >{child.props.children}</div>
+                        <div key={child.props.lable} style={{padding: '10px'}}>{child.props.children}</div>
                     )
-                }
-
-                    
+                    }   
                 )}
             </div>
         )

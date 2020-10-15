@@ -286,8 +286,94 @@ li > .btn-logout {
   outline: none;
 }
 
-/*-------Home---------*/
+/*-------Tabnav---------*/
+.nav-tab {
+  display: flex;
+}
+
+.nav-item-tab {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #F8A253;
+  cursor: pointer;
+  background-color:#FCFCFC;
+}
+
+.nav-active {
+  font-weight: bold;
+  background-color: #F8A253;
+}
+
+.nav-active > a {
+  color: white;
+}
 
 
+/*--------Home----------*/
+.container-questions {
+  width: inherit;
+  background-color: #F7F7F7;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 2px #f3ede4, 0px 0px 10px 2px #f5f1eb;
+}
+
+/*-----Question---------*/
+
+.card {
+    width: 80%;
+    background-color: #FCFCFC;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    /* border: 1px solid #da8d35; */
+    box-shadow: 0px 0px 6px 2px #e6e6e6, 0px 0px 6px 2px #e6e6e6;
+    border-radius: 10px;
+
+}
+
+.card-question{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 25px;
+}
+
+.card-head {
+  padding: 10px 0 10px 30px;
+  margin: 0;
+  border-bottom: 1px solid #da8d35;
+  font-weight: 400;
+  color: #825a36;
+}
+
+.card-question-avatar {
+  border-right: 1.5px solid #da8d35;
+  border-right-style: dotted;
+  margin-right: 30px;
+  padding-right: 30px;
+}
+
+.detail-head {
+  letter-spacing: 0.7px;
+  font-weight: 500;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  width: 20%;
+}
+
+.router-link {
+  text-decoration: none;
+  color: #F8A253;
+  border: 1px solid #da8d35;
+  border-radius: 3px;
+  padding: 5px 95px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
 
 
