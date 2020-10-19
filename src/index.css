@@ -321,7 +321,6 @@ li > .btn-logout {
 /*-----Question---------*/
 
 .card {
-    width: 80%;
     background-color: #FCFCFC;
     margin: 0 auto;
     margin-bottom: 40px;
@@ -329,6 +328,10 @@ li > .btn-logout {
     box-shadow: 0px 0px 6px 2px #e6e6e6, 0px 0px 6px 2px #e6e6e6;
     border-radius: 10px;
 
+}
+
+.card-container {
+  width: 80%;
 }
 
 .card-question{
@@ -374,6 +377,11 @@ li > .btn-logout {
   padding: 5px 95px;
   font-size: 12px;
   letter-spacing: 1px;
+}
+
+/*___________Unanswered question______________*/ 
+.card-unans{
+  width: 50%;
 }
 
 

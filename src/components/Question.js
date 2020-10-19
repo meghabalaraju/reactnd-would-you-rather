@@ -12,7 +12,7 @@ class Question extends Component {
             return <p>This question does not exists</p>
         }
         return (
-            <div className="card">
+            <div className="card card-container">
                 <h3 className="card-head">{user.name} asks :</h3>
                 <div className="card-question">
                     <div className="card-question-avatar">
