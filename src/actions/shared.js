@@ -26,21 +26,20 @@ export function handleSaveQuestionAnswer(id, answer) {
     return (dispatch, getState) => {
   
       const { authedUser } = getState();
-  
-      dispatch(saveAnswer({ authedUser, id, answer}));
-      dispatch(saveQuestion({ authedUser, id, answer}));
-      
+        
       return saveQuestionAnswer({
         authedUser,
         qid: id,
         answer,
-      }).catch((err) => {
-          console.warn('Error in saving selected answer', err)
-
+      })
+        .catch((err) => {
+            console.warn('Error in saving selected answer', err)
+            alert('There was an erro saving the answer. Try again')
+        })
+        .then(() =>{
           dispatch(saveAnswer({authedUser, id, answer}));
           dispatch(saveQuestion({authedUser, id, answer}));
+        })
 
-          alert('There was an erro saving the answer. Try again')
-      })
     };
   }
