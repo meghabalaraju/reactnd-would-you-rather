@@ -150,6 +150,17 @@ p {
 .u-margin-small{
   margin-bottom: 10px;
 }
+.u-margin-top {
+  margin-top: 0;
+}
+
+.u-margin-small-top {
+  margin-top: 10px;
+}
+
+.u-margin-small-left {
+  margin-left: 10px;
+}
 
 .u-font-small {
   font-size: 16px;
@@ -381,7 +392,26 @@ li > .btn-logout {
 
 /*___________Unanswered question______________*/ 
 .card-unans{
-  width: 50%;
+  width: 80%;
+}
+
+.btn-uans {
+  padding: 6px 42px;
+  color: #FCFCFC;
+  border: 1px solid #da8d35;
+  border-radius: 3px;
+  background-color: #F8A253;
+  outline: none;
+}
+
+.label-uans {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.avatar-uans {
+  height: 90px;
 }
 
 

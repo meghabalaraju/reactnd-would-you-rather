@@ -1,60 +1,94 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import avatarLady from '../utils/icons/avatarLady.svg'
+import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
+import { handleSaveQuestionAnswer } from "../actions/shared";
+import avatarLady from "../utils/icons/avatarLady.svg";
+import Nav from "./Nav";
 
 class UnansweredQuestion extends Component {
+  state = {
+    selected: this.props.question.optionOne.text,
+    answer: "optionOne",
+  };
 
-    state = {
-        slected: 
-    }
+  handleChange = (e) => {
+    const { value } = e.target;
+    const { optionOne } = this.props.question;
 
-    handleChange = (e) => {
-        e.preventDefault()
-        const option = e.target.value
+    this.setState(() => ({
+      selected: value,
+      answer: value === optionOne.text ? "optionOne" : "optionTwo",
+    }));
+  };
 
-        console.log(option)
-    }
+  handleSubmit = (e) => {
+    e.preventDefault();
 
-    handleSubmit = (e) => {
-        e.preventDefault()
-    }
-    render() {
-        const { question, user } = this.props
-        const { id, author, timestamp, optionOne, optionTwo } = question
-        const { avatarURL } = user
-        return (
-            <div className="card card-unans">
-                <h3 className="card-head">{user.name} asks :</h3>
-                <div className="card-question">
-                    <div className="card-question-avatar">
-                        <img src={avatarURL ? avatarURL : avatarLady} alt="leader-avatar" className="avatar"/>
-                    </div>
-                    <div className="card-question-detail">
-                        <h5 className="u-margin detail-head">Would you rather</h5>
-                        <div>
-                            <input type="radio" id="huey" name="drone" value={optionOne.text}  onChange={(e)=> this.handleChange(e)} />
-                            <label for="huey">{optionOne.text}</label>
-                        </div>
+    const { answer } = this.state;
+    const { dispatch, question } = this.props;
+    const { id } = question;
 
-                        <div>
-                            <input type="radio" id="dewey" name="drone" value={optionTwo.text} onChange={(e)=> this.handleChange(e)} />
-                            <label for="dewey">{optionTwo.text}</label>
-                        </div>
-                        <button type="submit" onClick={(e) => this.handleSubmit(e)}>Submit</button>                      
-                    </div>
-                </div>
+    dispatch(handleSaveQuestionAnswer(id, answer));
+  };
+
+  render() {
+    const { question, user } = this.props;
+    const { optionOne, optionTwo } = question;
+    const { avatarURL } = user;
+    const { selected } = this.state;
+    return (
+      <Fragment>
+        <Nav />
+        <div className="card card-unans">
+          <h3 className="card-head">{user.name} asks :</h3>
+          <div className="card-question">
+            <div className="card-question-avatar">
+              <img
+                src={avatarURL ? avatarURL : avatarLady}
+                alt="leader-avatar"
+                className="avatar avatar-uans"
+              />
             </div>
-        )
-    }
+            <form className="card-question-detail" onSubmit={this.handleSubmit}>
+              <h5 className="u-margin-top u-margin-small detail-head">
+                Would you rather
+              </h5>
+              <div className="u-margin-small">
+                <input
+                  type="radio"
+                  value={optionOne.text}
+                  checked={selected === optionOne.text}
+                  onChange={this.handleChange}
+                />
+                <label className="label-uans">{optionOne.text}</label>
+              </div>
+
+              <div className="u-margin-small">
+                <input
+                  type="radio"
+                  value={optionTwo.text}
+                  checked={selected === optionTwo.text}
+                  onChange={this.handleChange}
+                />
+                <label className="label-uans">{optionTwo.text}</label>
+              </div>
+              <button className="u-margin-small-top btn-uans" type="submit">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </Fragment>
+    );
+  }
 }
 
-function mapStateToProps({questions, users}, { id }) {
-    const question = questions[id]
-    const user = users[question.author]
-    return {
-        question,
-        user
-    }
+function mapStateToProps({ questions, users }, { id }) {
+  const question = questions[id];
+  const user = users[question.author];
+  return {
+    question,
+    user,
+  };
 }
 
-export default connect(mapStateToProps)(UnansweredQuestion)
+export default connect(mapStateToProps)(UnansweredQuestion);
