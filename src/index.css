@@ -48,7 +48,7 @@ code {
 }
 
 .log-header {
-  padding: 20px;  
+  padding: 20px;
   text-align: center;
   margin-bottom: 35px;
 }
@@ -76,13 +76,13 @@ code {
   padding: 10px 50px;
   background-color: #fe8c00;
   color: #dbd4d4;
-  
+
 }
 
 /*  New Poll */
 
 .newPoll {
-  background-color: #FFFCF9;  
+  background-color: #FFFCF9;
   background-image:  radial-gradient( circle at top right,#53f8d4,#f3f2f1 );
 }
 
@@ -390,7 +390,7 @@ li > .btn-logout {
   letter-spacing: 1px;
 }
 
-/*___________Unanswered question______________*/ 
+/*___________Unanswered question______________*/
 .card-unans{
   width: 80%;
 }
@@ -414,4 +414,74 @@ li > .btn-logout {
   height: 90px;
 }
 
+/*________Amswered questions__________*/
+.container-ans {
+  background-color: #F7F7F7;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 2px #f3ede4, 0px 0px 10px 2px #f5f1eb;
+}
 
+.head-ans {
+  padding: 10px 0 10px 30px;
+  margin: 0;
+  border-bottom: 1px solid #da8d35;
+  font-weight: 400;
+  color: #825a36;
+  background-color: #FCFCFC;
+}
+
+.avatar-ans {
+  height: 150px;
+  border-radius: 50px;
+  margin-right: 50px;
+}
+
+.details-ans {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+}
+
+.result-ans {
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  padding: 5px 50px;
+  background-color: #FCFCFC;
+}
+
+.result-ans:nth-of-type(1) {
+  margin-bottom: 20px;
+}
+
+.active-ans {
+  background-color: #f8eddb;
+  box-shadow: 0px 0px 10px 2px #f3e7d4, 0px 0px 10px 2px #fffdfb;
+  border-color: #da8d35;
+  font-weight: bold;
+  font-style: oblique;
+  letter-spacing: 1px;
+}
+
+#progressbar {
+  background-color: #faf6ed;
+  border-radius: 3px;
+  border: 1px solid #da8d35;
+  margin-bottom: 10px;
+}
+
+#progressbar>div {
+  background-color: #F8A253;
+  height: 20px;
+}
+
+.votes {
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
