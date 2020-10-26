@@ -31,7 +31,7 @@ class Home extends Component {
                             </Tab>
                             <Tab lable={'Answered Questions'}>
                                 {answeredQids.map((id) => (
-                                    <Question key={id} id={id}/>
+                                    <Question key={id} id={id} isAnswered={true}/>
                                 ))}
                             </Tab>
                         </TabNav>
@@ -46,9 +46,15 @@ class Home extends Component {
 function mapStateToProps( {authedUser, questions, users} ) {
 
     const questionIds = Object.keys(questions).sort((a, b) => questions[b].timstamp - questions[a].timstamp)
-    questionIds.map((id) => console.log(id))
     const answers = users[authedUser].answers
     const loading = Object.entries(questions).length === 0
+    const answeredQids = questionIds.map((qid) => {
+        const { optionOne, optionTwo, id } = questions[qid]
+        if ( optionOne.votes.includes(authedUser) || optionTwo.votes.includes(authedUser)) {
+            console.log("It is here", optionOne.votes, optionTwo.votes, id)
+            return qid
+        }
+    })
 
     return {
         authedUser,

@@ -1,19 +1,46 @@
-import { getInitialData } from "../utils/api"
-import { receiveUsers } from "./users"
-
+import { getInitialData, saveQuestionAnswer } from "../utils/api"
+import { receiveUsers, saveQuestion } from "./users"
+import { saveAnswer } from "./questions"
 
 /**
- * Fetch all users on app loading
- * you should be in 
+ * @description - Action creator to fetch users from api
  */
 
 export function handleInitialData () {
     return (dispatch) => {
-
-        // Fettching data from API then storing in store
         return getInitialData()
         .then(({users}) => {
             dispatch(receiveUsers(users))
         })
     }
 }
+
+
+/**
+ * 
+ * @param {string} id - question id 
+ * @param {string} answer - answer opted by user 
+ */
+
+export function handleSaveQuestionAnswer(id, answer) {
+    return (dispatch, getState) => {
+  
+      const { authedUser } = getState();
+  
+      dispatch(saveAnswer({ authedUser, id, answer}));
+      dispatch(saveQuestion({ authedUser, id, answer}));
+      
+      return saveQuestionAnswer({
+        authedUser,
+        qid: id,
+        answer,
+      }).catch((err) => {
+          console.warn('Error in saving selected answer', err)
+
+          dispatch(saveAnswer({authedUser, id, answer}));
+          dispatch(saveQuestion({authedUser, id, answer}));
+
+          alert('There was an erro saving the answer. Try again')
+      })
+    };
+  }
