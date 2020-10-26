@@ -63,12 +63,14 @@ class AnsweredQuestion extends Component {
                       <div id="progressbar">
                          <div style={optionOneProgress}>{optionOnePercentage}%</div>
                       </div>
+                      <p className="votes">{optionOneVotes} out of {totalVotes} votes</p>
                     </div>
                     <div className={`result-ans ${loggedAns === 'optionTwo' ? "active-ans" : ""}`} >
                       <p>Would you rather {optionTwo.text} ?</p>
                       <div id="progressbar">
                           <div style={optionTwoProgress}>{optionTwoPercentage}%</div>
                       </div>
+                      <p className="votes">{optionTwoVotes} out of {totalVotes} votes</p>
                     </div>
                 </div>
             </div>
