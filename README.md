@@ -11,6 +11,8 @@ Installs packages specified in package.json
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+<br />
+
 ## App functionality
 
 ### Login flow
@@ -32,7 +34,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - If it is anwered by you, you can find it in “Answered” category.
 - The question in both categories are arranged from the most recently created (top) to the least recently created (bottom).
 - Each question in both category has a link/button(view poll) to details of the question.
-- The details of the question are available at question/:question_id.
+- The details of the question are available at `/question/:question_id`.
 - For unanswered question, the following is shown:
     - the text “Would You Rather”;
     - the picture of the user who posted the polling question; and
@@ -52,18 +54,18 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - The data on the leaderboard changes appropriately.
 
 ### Adding/Creating new poll
-- The form is available at /add.
+- The form is available at `/add`.
 - It shows the text “Would You Rather” and has a form for creating two options.
 - Upon submitting the form, a new poll is created and you will be taken to the home page.
 - The new polling question appears in the unanswered questions category on the home page.
 
 ### LeaderBoard
-    - The Leaderboard is available at /leaderboard.
-    - Each entry on the leaderboard contains the following:
-        - the user’s name;
-        - the user’s picture;
-        - the number of questions the user asked; and
-        - the number of questions the user answered.
-        - Users are ordered in descending order based on the sum of the number of questions they’ve answered and the number of questions they’ve asked.
+- The Leaderboard is available at `/leaderboard`.
+- Each entry on the leaderboard contains the following:
+    - the user’s name;
+    - the user’s picture;
+    - the number of questions the user asked; and
+    - the number of questions the user answered.
+    - Users are ordered in descending order based on the sum of the number of questions they’ve answered and the number of questions they’ve asked.
 
 
