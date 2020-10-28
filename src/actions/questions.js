@@ -1,4 +1,5 @@
 import { getQuestions } from "../utils/api";
+import { showLoading, hideLoading } from 'react-redux-loading-bar';
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const SAVE_ANSWER = "SAVE_ANSWER";
@@ -26,9 +27,14 @@ export function receiveQuestions(questions) {
 
 export function handleQuestions() {
   return (dispatch) => {
-    return getQuestions().then(({ questions }) => {
+
+    dispatch(showLoading());
+
+    return getQuestions()
+    .then(({ questions }) => {
       dispatch(receiveQuestions(questions));
-    });
+    })
+    .then(() => dispatch(hideLoading()))
   };
 }
 
