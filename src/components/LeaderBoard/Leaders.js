@@ -5,6 +5,7 @@ class Leaders extends Component {
     render() {
         const { userData } = this.props
         const { name, avatarURL, answers, questions, score } = userData 
+        const noAnsweredQuestions = Object.keys(answers).length;
 
         return(
             <div className="leader-container">
@@ -13,7 +14,7 @@ class Leaders extends Component {
                     <p className="leader-name">{name}</p>
                 </div>
                 <div className="leader-qa">
-                    <p>Answered Questions &ensp;{answers.length} </p>
+                    <p>Answered Questions &ensp;{noAnsweredQuestions} </p>
                     <p>Created Questions &ensp;{questions.length}</p>
                 </div>
                 <div className="leader-score">
