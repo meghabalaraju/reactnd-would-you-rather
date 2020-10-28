@@ -14,9 +14,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### App functionality
 
 ## Login flow
-    - You can log in as an existing user. You can select a name from the list of existing users.
-    - The application works similarly regardless of which user is selected.
-    - Fr logout, you will find a logout button in the top-right corner once you logged in.
+- You can log in as an existing user. You can select a name from the list of existing users.
+- The application works similarly regardless of which user is selected.
+- Fr logout, you will find a logout button in the top-right corner once you logged in.
 
 ## Home page
     - The answered and unanswered polls are both available at the '/home'.
