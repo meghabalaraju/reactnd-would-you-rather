@@ -6,7 +6,7 @@ import avatarLady from '../utils/icons/avatarLady.svg'
 class Question extends Component {
     render() {
         const { question, user } = this.props
-        const { id, author, timestamp, optionOne, optionTwo } = question
+        const { id, optionOne } = question
 
         if (question === null) {
             return <p>This question does not exists</p>

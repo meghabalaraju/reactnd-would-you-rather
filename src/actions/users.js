@@ -1,6 +1,6 @@
 export const RECEIVE_USERS = 'RECEIVE_USERS'
 export const SAVE_QUESTION = 'SAVE_QUESTION'
-
+export const ADD_QUESTION =  'ADD_QUESTION'
 
 /**
  * @description - Action to fetch users from api/ _DATA.js in this case
@@ -29,3 +29,10 @@ export function saveQuestion({ authedUser, id, answer}) {
       answer
     };
   }
+
+export function addQuestionToUser(question) {
+  return {
+    type: ADD_QUESTION,
+    question
+  }
+}

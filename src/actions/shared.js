@@ -1,6 +1,6 @@
-import { getInitialData, saveQuestionAnswer } from "../utils/api"
-import { receiveUsers, saveQuestion } from "./users"
-import { saveAnswer } from "./questions"
+import { getInitialData, saveQuestionAnswer, addQuestion } from "../utils/api"
+import { receiveUsers, saveQuestion, addQuestionToUser } from "./users"
+import { saveAnswer, createQuestion } from "./questions"
 
 /**
  * @description - Action creator to fetch users from api
@@ -17,7 +17,7 @@ export function handleInitialData () {
 
 
 /**
- * 
+ * @description - Action creator - to save answer and question of unanswered question
  * @param {string} id - question id 
  * @param {string} answer - answer opted by user 
  */
@@ -42,4 +42,18 @@ export function handleSaveQuestionAnswer(id, answer) {
         })
 
     };
+  }
+
+  /**
+   * @description - Action creator - to add question to questions and to users who created question
+   * @param {Object} question - unformatted question 
+   */
+  export function handleCreateQuestion(question){
+    return (dispatch) => {
+      return addQuestion(question)
+        .then((question) => {
+            dispatch(createQuestion(question));
+            dispatch(addQuestionToUser(question));
+        })
+    }
   }

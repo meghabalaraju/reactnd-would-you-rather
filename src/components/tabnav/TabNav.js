@@ -30,7 +30,7 @@ class TabNav extends Component {
                     })}
                 </ul>
                 {this.props.children.map((child) => {
-                    if(child.props.lable === active)
+                    if(child.props.lable === active) 
                     return (
                         <div key={child.props.lable} style={{padding: '10px'}}>{child.props.children}</div>
                     )
