@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { handleInitialData } from '../actions/shared';
-import NewPoll from '../components/NewPoll'
-import LeaderBoard from './LeaderBoard';
-import Home from './Home';
 import Login from './Login';
 import PrivateRoute from '../routes/PrivateRoute';
-import QuestionDetail from './QuestionDetail';
+import Home from './Home';
+import NewPoll from '../components/Questions/NewPoll';
+import LeaderBoard from '../components/LeaderBoard/LeaderBoard';
+import QuestionDetail from '../components/Questions/QuestionDetail';
 
 class App extends Component {
 
@@ -22,7 +22,7 @@ class App extends Component {
             <Switch>
               <Route path="/" exact component={Login} /> 
               <PrivateRoute exact path="/home" component={Home} />
-              <PrivateRoute exact path="/new" component={NewPoll} />
+              <PrivateRoute exact path="/add" component={NewPoll} />
               <PrivateRoute exact path="/leaderboard" component={LeaderBoard} />
               <PrivateRoute exact path="/question/:id" component={QuestionDetail} />
 

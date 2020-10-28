@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Nav from "./Nav";
-import avatarLady from "../utils/icons/avatarLady.svg";
+import Nav from "../Navigation/Nav";
+import avatarLady from "../../utils/icons/avatarLady.svg";
 
 class AnsweredQuestion extends Component {
   render() {
@@ -111,7 +111,6 @@ function mapStateToProps({ authedUser, questions, users }, { id }) {
   const user = users[questions[id].author];
   const loggedAns = users[authedUser].answers[id];
 
-  console.log(questions[id], loggedAns);
   return {
     question: id ? questions[id] : null,
     user,

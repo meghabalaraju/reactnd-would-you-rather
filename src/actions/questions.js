@@ -4,6 +4,9 @@ export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const SAVE_ANSWER = "SAVE_ANSWER";
 export const CREATE_QUESTION = "CREATE_QUESTION"
 
+// Code is organied to find Actions followed by Action creators
+
+
 /**
  * @description - Action for fetching question
  * @param {object} questions - questions
@@ -30,8 +33,12 @@ export function handleQuestions() {
 }
 
 
+
+
+
+
 /**
- * @description - Action - to add authed user to answered question
+ * @description - Action // related action creator is in shared
  * @param { string } authedUser - loggedin user
  * @param { string } id - question id 
  * @param { string } answer - answer opted by user 
@@ -47,8 +54,12 @@ export function saveAnswer({ authedUser, id, answer}) {
 }
 
 
+
+
+
+
 /**
- * @description - Action to add question
+ * @description - Action to add question when new poll is created
  * @param {object} questions - questions
  */
 export function createQuestion(question) {

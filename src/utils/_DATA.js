@@ -2,7 +2,8 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: "https://ui.dev/would-you-rather/sarah.jpg",
+    // avatarURL: "https://ui.dev/would-you-rather/sarah.jpg",
+    avatarURL: "",  // no data provided to improve app functionality
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
