@@ -2,6 +2,12 @@ import { getQuestions } from "../utils/api";
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const SAVE_ANSWER = "SAVE_ANSWER";
+export const CREATE_QUESTION = "CREATE_QUESTION"
+
+/**
+ * @description - Action for fetching question
+ * @param {object} questions - questions
+ */
 
 export function receiveQuestions(questions) {
   return {
@@ -9,6 +15,11 @@ export function receiveQuestions(questions) {
     questions,
   };
 }
+
+
+/**
+ * @description - Action creator to fetch questions
+ */
 
 export function handleQuestions() {
   return (dispatch) => {
@@ -20,7 +31,7 @@ export function handleQuestions() {
 
 
 /**
- * @description -  Answers will be added to related question
+ * @description - Action - to add authed user to answered question
  * @param { string } authedUser - loggedin user
  * @param { string } id - question id 
  * @param { string } answer - answer opted by user 
@@ -33,4 +44,16 @@ export function saveAnswer({ authedUser, id, answer}) {
     id, 
     answer
   };
+}
+
+
+/**
+ * @description - Action to add question
+ * @param {object} questions - questions
+ */
+export function createQuestion(question) {
+  return {
+    type: CREATE_QUESTION,
+    question
+  }
 }
