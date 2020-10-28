@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Before you begin, this application is developed only by using react, react-redux. Please keep in mind this app is not meant ot use hooks since it is a part of my react developer curriculum. I am taking it step by step.
+
 In the project directory, you can run:
 
 ### `npm install`
