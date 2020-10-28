@@ -8,6 +8,7 @@ import Home from './Home';
 import NewPoll from '../components/Questions/NewPoll';
 import LeaderBoard from '../components/LeaderBoard/LeaderBoard';
 import QuestionDetail from '../components/Questions/QuestionDetail';
+import LoadingBar from 'react-redux-loading-bar'
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ class App extends Component {
     return (
         <Router>
           <div className="app-container">
+            <LoadingBar />
             <Switch>
               <Route path="/" exact component={Login} /> 
               <PrivateRoute exact path="/home" component={Home} />

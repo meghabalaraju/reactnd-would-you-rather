@@ -2,15 +2,18 @@ import { getInitialData, saveQuestionAnswer, addQuestion } from "../utils/api";
 import { receiveUsers, saveQuestion, addQuestionToUser } from "./users";
 import { saveAnswer, createQuestion } from "./questions";
 
+import { hideLoading, showLoading } from 'react-redux-loading-bar';
+
 /**
  * @description - Action creator to fetch users from api
  */
 
 export function handleInitialData() {
   return (dispatch) => {
-    return getInitialData().then(({ users }) => {
-      dispatch(receiveUsers(users));
-    });
+    return getInitialData()
+      .then(({ users }) => {
+        dispatch(receiveUsers(users));
+      });
   };
 }
 
@@ -50,9 +53,14 @@ export function handleSaveQuestionAnswer(id, answer) {
  */
 export function handleCreateQuestion(question) {
   return (dispatch) => {
-    return addQuestion(question).then((question) => {
-      dispatch(createQuestion(question));
-      dispatch(addQuestionToUser(question));
-    });
+
+    dispatch(showLoading());
+
+    return addQuestion(question)
+      .then((question) => {
+        dispatch(createQuestion(question));
+        dispatch(addQuestionToUser(question));
+      })
+      .then(() => dispatch(hideLoading()))
   };
 }
