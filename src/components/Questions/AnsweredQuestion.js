@@ -111,7 +111,6 @@ function mapStateToProps({ authedUser, questions, users }, { id }) {
   const user = users[questions[id].author];
   const loggedAns = users[authedUser].answers[id];
 
-  console.log(questions[id], loggedAns);
   return {
     question: id ? questions[id] : null,
     user,

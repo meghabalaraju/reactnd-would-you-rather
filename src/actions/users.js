@@ -14,6 +14,8 @@ export function receiveUsers (users) {
 }
 
 
+
+
 /**
  * @description - Question and answer will be added to related user
  * @param { string } authedUser - loggedin user
@@ -28,8 +30,15 @@ export function saveQuestion({ authedUser, id, answer}) {
       id, 
       answer
     };
-  }
+}
 
+
+
+
+/**
+ * @description - Action - adds created question to user's data
+ * @param {object} question 
+ */
 export function addQuestionToUser(question) {
   return {
     type: ADD_QUESTION,

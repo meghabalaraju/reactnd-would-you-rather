@@ -22,19 +22,13 @@ class TabNav extends Component {
                     {tabs.map((tab) => {
                         return (
                             <li key={tab} className={`nav-item-tab ${tab === active ? 'nav-active' : ''}`} onClick={(e) => this.setSelected(e, tab) }> 
-                                <a href="#" className="nav-link-tab">
-                                    {tab}
-                                </a>
+                                {tab}
                             </li>
                         )
                     })}
                 </ul>
-                {this.props.children.map((child) => {
-                    if(child.props.lable === active) 
-                    return (
-                        <div key={child.props.lable} style={{padding: '10px'}}>{child.props.children}</div>
-                    )
-                    }   
+                {this.props.children.map((child, i) => child.props.lable === active &&
+                    (<div key={i} style={{padding: '10px'}}>{child.props.children}</div>)
                 )}
             </div>
         )

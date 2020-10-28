@@ -1,6 +1,7 @@
 export const SET_AUTHED_USER = 'SET_AUTHED_USER';
 export const REMOVE_AUTH = 'REMOVE_AUTH'
 
+// Code is organied to find Actions followed by Action creators
 
 /**
  * @description - action for login
@@ -24,6 +25,10 @@ export function handleSetAuthedUser (id) {
         dispatch(setAuthedUser(id))
     }
 }
+
+
+
+
 
 /**
  * @description - action for logout
