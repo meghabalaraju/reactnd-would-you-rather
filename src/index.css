@@ -76,7 +76,7 @@ code {
   padding: 10px 50px;
   background-color: #fe8c00;
   color: black;
-
+  cursor: pointer;
 }
 
 /*  New Poll */
@@ -402,6 +402,7 @@ li > .btn-logout {
   border-radius: 3px;
   background-color: #F8A253;
   outline: none;
+  cursor: pointer;
 }
 
 .label-uans {

@@ -10,15 +10,16 @@ class QuestionDetail extends Component {
     if (isAnswered === null) {
       return (
         <div>
-          <p>
-            Please login to continue <Link to="/">Login</Link>
+          <p style={{ textAlign: "center" }}>
+            This question does not exists. Please continue by{" "}
+            <Link to="/">Login</Link>
           </p>
         </div>
       );
     }
 
     return (
-      <div style={{width: '50%', margin: '0 auto'}}>
+      <div style={{ width: "50%", margin: "0 auto" }}>
         {isAnswered ? (
           <AnsweredQuestion id={id} />
         ) : (

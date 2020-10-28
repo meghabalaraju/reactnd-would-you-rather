@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Leaders from './Leaders'
-import Nav from './Nav'
+import Nav from '../Navigation/Nav'
 
 class LeaderBoard extends Component {
     render () {
@@ -21,7 +21,14 @@ class LeaderBoard extends Component {
 }
 
 function mapStateToProps ({users, authedUser}) {
-    const leaders = Object.keys(users).map((id) => users[id])
+    const leadersList = Object.keys(users).map((id) => users[id])
+
+    const leaders = leadersList.map((leader) => {
+        const leaderscore = Object.keys(leader.answers).length + leader.questions.length
+        leader["score"] = leaderscore
+        return leader;
+    }).sort((a, b) => b.score - a.score)
+
 
     return {
         leaders,

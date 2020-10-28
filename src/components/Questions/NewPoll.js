@@ -1,23 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { handleCreateQuestion } from "../actions/shared";
-import logo from "../utils/icons/newPollBg.svg";
-import Nav from "./Nav";
+import { handleCreateQuestion } from "../../actions/shared";
+import logo from "../../utils/icons/newPollBg.svg";
+import Nav from "../Navigation/Nav";
 
 class NewPoll extends Component {
-
   state = {
     optionOneText: "",
     optionTwoText: "",
-  }
+  };
 
   handleChange = (e) => {
-    e.preventDefault()
-    const {name, value} = e.target;
+    e.preventDefault();
+    const { name, value } = e.target;
 
-    this.setState({ [name]: value })
-
-  }
+    this.setState({ [name]: value });
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -28,22 +26,23 @@ class NewPoll extends Component {
     const question = Object.create({
       optionOneText: optionOneText,
       optionTwoText: optionTwoText,
-      author: authedUser
-    })
+      author: authedUser,
+    });
 
-    dispatch(handleCreateQuestion(question));      
+    dispatch(handleCreateQuestion(question));
 
     this.setState(() => ({
       optionOneText: "",
-      optionTwoText: ""
-    }))
+      optionTwoText: "",
+    }));
 
-    this.props.history.push('/home');
-  }
-  
+    this.props.history.push("/home");
+  };
+
   render() {
     const { optionOneText, optionTwoText } = this.state;
-    const isDiabled = optionOneText === "" || optionTwoText === "" ? true : false
+    const isDiabled =
+      optionOneText === "" || optionTwoText === "" ? true : false;
 
     return (
       <div className="leaderboard-container">
@@ -79,10 +78,13 @@ class NewPoll extends Component {
                 maxLength={100}
               />
               <p style={{ opacity: 0, margin: "5px" }}>text left</p>
-              <button 
-                className="btn btn-create center" 
+              <button
+                className="btn btn-create center"
                 type="submit"
-                disabled={isDiabled}>Post</button>
+                disabled={isDiabled}
+              >
+                Post
+              </button>
             </form>
           </div>
         </div>
@@ -91,10 +93,10 @@ class NewPoll extends Component {
   }
 }
 
-function mapStateToProps({ authedUser}) {
+function mapStateToProps({ authedUser }) {
   return {
-    authedUser
-  }
+    authedUser,
+  };
 }
 
 export default connect(mapStateToProps)(NewPoll);

@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { handleSaveQuestionAnswer } from "../actions/shared";
-import avatarLady from "../utils/icons/avatarLady.svg";
-import Nav from "./Nav";
+import { handleSaveQuestionAnswer } from "../../actions/shared";
+import avatarLady from "../../utils/icons/avatarLady.svg";
+import Nav from "../Navigation/Nav";
 
 class UnansweredQuestion extends Component {
   state = {
