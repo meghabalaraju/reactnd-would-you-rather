@@ -2,13 +2,30 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 **Before you begin, this application is developed only by using react, react-redux. Please keep in mind this app is not meant ot use hooks since it is a part of my react developer curriculum, I am taking it step by step.**
 
-In the project directory, you can run:
 
-### `npm install`
 
-Installs packages specified in package.json
+# Would you rather .... ?
 
-### `npm start`
+Would You Rather is a polling game that presents the user with a series of questions that can be answered one of two ways.
+
+This app is the second of three projects required for [Udacity's React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019).
+
+## Installation
+
+Clone this repository, change the project directory, user `npm` to install the dependencies:
+
+
+    git clone https://github.com/meghabalaraju/reactnd-would-you-rather.git 
+
+    cd reactnd-would-you-rather 
+
+    npm install
+
+
+## Usage
+The project can be run with
+
+    npm start
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
